@@ -93,7 +93,7 @@ make clean # Removes the entire build/ directory
 
 ---
 
-## 3. Exporting (Like Overleaf)
+## 3. Exporting
 
 If you are used to Overleaf's feature of downloading the compiled PDF or a ZIP archive of the source code, you can easily do the same in Codespaces or VS Code.
 
