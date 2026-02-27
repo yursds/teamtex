@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  teamtex:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Change to "light" for a smaller image with basic texlive packages
+        - TEXLIVE_VERSION=full
+    volumes:
+      - ..:/workspace:cached
+    # Overrides default command so container stays running
+    command: /bin/sh -c "while sleep 1000; do :; done"

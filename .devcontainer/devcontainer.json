@@ -1,0 +1,17 @@
+{
+	"name": "TeamTex",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "teamtex",
+	"workspaceFolder": "/workspace",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"James-Yu.latex-workshop",
+				"GitHub.copilot",
+				"ms-vsliveshare.vsliveshare"
+				// Uncomment below for Grammar checking
+				// "valentjn.vscode-ltex"
+			]
+		}
+	}
+}
