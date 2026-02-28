@@ -16,7 +16,8 @@
 			"files.exclude": {
 				".devcontainer": true,
 				".github": true,
-				"docs": true
+				"docs": true,
+				"LICENSE": true
 			}
 		}
 	}

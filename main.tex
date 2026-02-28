@@ -1,25 +1,38 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{hyperref}
+\documentclass[12pt,a4paper]{article}
 
-\title{TeamTex Template}
-\author{Collaborator Name}
+% Language and encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{csquotes} % Recommended by biblatex when using babel
+
+% Graphics and layout
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+% Bibliography
+\usepackage[style=numeric]{biblatex}
+\addbibresource{references.bib}
+
+\title{TeamTex: The Ultimate Collaborative Environment}
+\author{TeamTex Community}
 \date{\today}
 
 \begin{document}
 
 \maketitle
 
-\section{Introduction}
-Welcome to TeamTex! This is a minimal LaTeX template designed for GitHub Codespaces and VS Code Dev Containers.
+\begin{abstract}
+    TeamTex (TMT) is a minimalist, cloud-ready LaTeX environment optimized for GitHub Codespaces and Docker. This document demonstrates its core features, including image handling, sub-file inclusion, and bibliography management.
+\end{abstract}
 
-\subsection{Features}
-\begin{itemize}
-    \item Optimized Dev Container using \texttt{docker-compose} and \texttt{texlive-full}.
-    \item Real-time collaboration via VS Live Share.
-    \item Optional Grammar checking (LTeX).
-    \item Local fallback with a simple \texttt{Makefile} that outputs to the \texttt{build/} directory.
-\end{itemize}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{img/tmt_logo.png}
+\end{center}
+
+\input{src/introduction.tex}
+
+\printbibliography
 
 \end{document}

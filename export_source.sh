@@ -28,6 +28,7 @@ zip -r "$OUTPUT_NAME" . \
     -x ".gitignore" \
     -x "docs/*" \
     -x "README.md" \
+    -x "LICENSE" \
     -x "export_source.sh"
 
 echo "Done! You can now download '$OUTPUT_NAME'."

@@ -1,5 +1,12 @@
 # TeamTex (TMT)
 
+[![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](https://github.com/yursds/teamtex/releases)
+[![Docker Build](https://github.com/yursds/teamtex/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/yursds/teamtex/actions/workflows/docker-publish.yml)
+[![LaTeX Build](https://github.com/yursds/teamtex/actions/workflows/latex-check.yml/badge.svg)](https://github.com/yursds/teamtex/actions/workflows/latex-check.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Repo Size](https://img.shields.io/github/repo-size/yursds/teamtex)](https://github.com/yursds/teamtex)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/yursds/teamtex)
+
 TeamTex is a lightweight and customizable LaTeX environment built for Dev Containers, GitHub Codespaces, and robust local usage.
 
 ## TL;DR (Quick Start)
