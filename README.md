@@ -14,6 +14,14 @@ TeamTex is a lightweight and customizable LaTeX environment built for Dev Contai
 
 ---
 
+## Workspace Directory Handling
+
+Whether you are using GitHub Codespaces or Local Dev Containers, your entire repository is automatically mapped inside the container to the `/workspace` directory.
+
+Any files, scripts, images, or custom sub-folders (e.g., `src/`, `chapters/`, `assets/`) you add to your project folder alongside `main.tex` are instantly loaded, fully accessible by LaTeX during compilation, and synced with your local machine/GitHub.
+
+---
+
 ## Table of Contents
 
 1. [Compiling the Project](#compiling-the-project)

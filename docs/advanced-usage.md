@@ -20,6 +20,27 @@ Instead of cloning or forking, you can use TeamTex as a blueprint to mint comple
 
 ---
 
+## Important Note on Docker Image
+
+TeamTex uses a pre-built image from GitHub Container Registry (GHCR) as defined in `docker-compose.yml`:
+
+```yaml
+image: ghcr.io/yursds/teamtex-base:latest
+```
+
+This is done to ensure the environment loads instantly (especially in Codespaces).
+
+> [!WARNING]
+> **Modifying the local `Dockerfile` will NOT change your environment.** The existing `Dockerfile` is provided for transparency and as a source for the GHCR build.
+
+If you need to make system-level changes (e.g., installing new APT packages):
+
+1. Modify the `Dockerfile`.
+2. Update `docker-compose.yml` to use `build: .` instead of `image`.
+3. Rebuild the container.
+
+---
+
 ## Troubleshooting & Customization
 
 ### Changing the Main File Name
