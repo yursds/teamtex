@@ -1,0 +1,51 @@
+name: LaTeX and ZIP Verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=build
+
+      - name: Verify build artifacts
+        run: |
+          if [ ! -f build/main.pdf ]; then
+            echo "Error: PDF not generated!"
+            exit 1
+          fi
+
+      - name: Test Source Export Script
+        run: |
+          chmod +x export_source.sh
+          ./export_source.sh
+          if [ ! -f teamtex_source.zip ]; then
+            echo "Error: ZIP export failed!"
+            exit 1
+          fi
+
+      - name: Verify ZIP Privacy
+        run: |
+          # Use unzip -l to list files and grep for forbidden ones
+          unzip -l teamtex_source.zip > zip_content.txt
+          if grep -q "LICENSE" zip_content.txt; then
+            echo "Error: LICENSE found in ZIP export!"
+            exit 1
+          fi
+          if grep -E -q "(\.git/|\.devcontainer/|\.github/)" zip_content.txt; then
+            echo "Error: Configuration folders found in ZIP export!"
+            exit 1
+          fi
+          echo "ZIP verification passed!"
