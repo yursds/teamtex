@@ -2,6 +2,18 @@
 
 TeamTex is a lightweight and customizable LaTeX environment built for Dev Containers, GitHub Codespaces, and robust local usage.
 
+## TL;DR (Quick Start)
+
+1. **Click "Use this template"** on GitHub to create your new personal repository.
+2. **Open the Environment (Codespace):**
+   - **2a. From VS Code:** Install the _GitHub Codespaces_ extension, press `Ctrl+Shift+P`, search for **Create New Codespace** and select your new repository.
+   - **2b. From Browser:** Open your new repository on GitHub and click `Code` > `Codespaces` > `Create codespace on main`.
+3. **Wait a few seconds** for the prebuilt environment to load.
+4. Open `main.tex` and start typing. Every time you **save (`Ctrl + S`)**, it compiles automatically!
+5. Find your generated PDF in the `build/` folder.
+
+---
+
 ## Table of Contents
 
 1. [Work Environments](#1-work-environments)
@@ -19,6 +31,8 @@ TeamTex is a lightweight and customizable LaTeX environment built for Dev Contai
 
 4. [Using as a GitHub Template](#4-using-as-a-github-template)
 
+5. [Extra Features](#5-extra-features)
+
 ---
 
 ## 1. Work Environments
@@ -31,7 +45,7 @@ The fastest environment, requires zero local configuration.
 
 1. Install the **GitHub Codespaces** extension in VS Code.
 2. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac).
-3. Select **Codespaces: Create New Codespace** and choose the `teamtex` repository.
+3. Select **Codespaces: Create New Codespace** and choose the `TeamTex` repository.
 
 **From the Browser:**
 
@@ -43,7 +57,7 @@ The fastest environment, requires zero local configuration.
 
 Work locally while maintaining an isolated environment identical to the server. There are two ways to do this:
 
-**Method 1: Auto-build (Recommended)**
+**Method 1: Auto-build (GUI)**
 
 1. Install [Docker](https://www.docker.com/) and [Visual Studio Code](https://code.visualstudio.com/).
 2. Install the **Dev Containers** extension in VS Code.
@@ -56,7 +70,7 @@ Work locally while maintaining an isolated environment identical to the server. 
 2. Run `docker compose up -d --build` to start the LaTeX container in the background.
 3. Open VS Code, press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac), search for **Dev Containers: Attach to Running Container...** and select the `teamtex` container.
 
-### Using Local Native Setup
+### Using Local Native Setup (Recommended Only for Experts)
 
 If you prefer to work locally without Docker.
 
@@ -130,14 +144,6 @@ To download your entire LaTeX source code as a ZIP archive:
 
 ---
 
-## Extra Features
-
-- **Live Collaboration:** `vsliveshare` extension is pre-configured for multi-author writing.
-- **GitHub Copilot:** Supported out-of-the-box.
-- **Grammar Options:** You can enable LTeX by editing `.devcontainer/devcontainer.json` and uncommenting `valentjn.vscode-ltex` (default language is `en-US`).
-
----
-
 ## 4. Using as a GitHub Template
 
 Instead of cloning or forking, you can use TeamTex as a blueprint to mint completely clean, new repositories.
@@ -150,3 +156,11 @@ Instead of cloning or forking, you can use TeamTex as a blueprint to mint comple
 6. Click **Create repository from template**.
 
 This will generate a brand new repository populated with the TeamTex structure, but without the git commit history of the original template.
+
+---
+
+## 5. Extra Features
+
+- **Live Collaboration:** `vsliveshare` extension is pre-configured for multi-author writing.
+- **GitHub Copilot:** Supported out-of-the-box.
+- **Grammar Options:** You can enable LTeX by editing `.devcontainer/devcontainer.json` and uncommenting `valentjn.vscode-ltex` (default language is `en-US`).

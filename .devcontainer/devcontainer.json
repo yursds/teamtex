@@ -3,6 +3,7 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "teamtex",
 	"workspaceFolder": "/workspace",
+	"updateContentCommand": "make all",
 	"customizations": {
 		"vscode": {
 			"extensions": [
