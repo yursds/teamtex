@@ -9,6 +9,7 @@ on:
 
 jobs:
   verify:
+    if: github.repository == 'yursds/TeamTex'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
