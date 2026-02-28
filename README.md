@@ -9,6 +9,12 @@
 
 TeamTex is a lightweight and customizable LaTeX environment built for Dev Containers, GitHub Codespaces, and robust local usage.
 
+---
+
+<p align="center">
+  <img src="docs/img/meme.jpg" alt="TeamTex Meme" width="50%">
+</p>
+
 ## TL;DR (Quick Start)
 
 1. **Click "Use this template"** on GitHub to create your own repository.
