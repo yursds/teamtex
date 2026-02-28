@@ -12,9 +12,12 @@ TeamTex is a lightweight and customizable LaTeX environment built for Dev Contai
    - [Defining the Main Source File](#defining-the-main-source-file)
    - [Option A: LaTeX Workshop (VS Code)](#option-a-latex-workshop-vs-code)
    - [Option B: Terminal Makefile](#option-b-terminal-makefile)
-3. [Exporting (Like Overleaf)](#3-exporting-like-overleaf)
-   - [Download PDF](#download-pdf)
-   - [Download Source (ZIP)](#download-source-zip)
+3. [Exporting](#3-exporting)
+
+- [Download PDF](#download-pdf)
+- [Download Source (ZIP)](#download-source-zip)
+
+4. [Using as a GitHub Template](#4-using-as-a-github-template)
 
 ---
 
@@ -50,7 +53,7 @@ Work locally while maintaining an isolated environment identical to the server. 
 **Method 2: Manual CLI Build and VS Code Attach**
 
 1. Open a terminal and navigate to the `.devcontainer/` folder.
-2. Run `docker-compose up -d --build` to start the LaTeX container in the background.
+2. Run `docker compose up -d --build` to start the LaTeX container in the background.
 3. Open VS Code, press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac), search for **Dev Containers: Attach to Running Container...** and select the `teamtex` container.
 
 ### Using Local Native Setup
@@ -60,6 +63,12 @@ If you prefer to work locally without Docker.
 1. Open the project in VS Code or your preferred editor.
 2. Make sure you have a local LaTeX distribution installed (e.g., TeX Live or MiKTeX).
 3. Thanks to the integrated `.vscode/settings.json`, LaTeX Workshop will automatically create a `build/` folder to contain all auxiliary files.
+
+### Workspace Directory Handling
+
+Whether you are using GitHub Codespaces or Local Dev Containers, your entire repository is automatically mapped inside the container to the `/workspace` directory.
+
+> **What does this mean?** Any files, scripts, images, or custom sub-folders (e.g., `src/`, `chapters/`, `assets/`) you add to your project folder alongside `main.tex` are instantly loaded, fully accessible by LaTeX during compilation, and synced with your local machine/GitHub. You do **not** need to modify the `Dockerfile` to add new files.
 
 ---
 
@@ -110,9 +119,13 @@ To download your entire LaTeX source code as a ZIP archive:
 1. In the VS Code File Explorer, right-click on the `teamtex` workspace folder (or right-click in an empty space in the explorer).
 2. Assuming you are in the Codespace, look for the **Download...** option.
 3. Alternatively, you can use the built-in Terminal to zip the source:
+
    ```bash
    zip -r teamtex_source.zip . -x "build/*" -x ".git/*" -x ".vscode/*" -x ".devcontainer/*" -x ".gitignore" -x "Makefile" -x "README.md" -x ".latexmkrc"
    ```
+
+   > **Note for Windows users:** The `zip` command requires a Linux-like terminal (like the one present in the Dev Container, Codespaces, or Git Bash). If you are using native PowerShell, you might need to manually zip the files using the File Explorer.
+
    Then right-click the generated `teamtex_source.zip` file and select **Download**.
 
 ---
@@ -122,3 +135,18 @@ To download your entire LaTeX source code as a ZIP archive:
 - **Live Collaboration:** `vsliveshare` extension is pre-configured for multi-author writing.
 - **GitHub Copilot:** Supported out-of-the-box.
 - **Grammar Options:** You can enable LTeX by editing `.devcontainer/devcontainer.json` and uncommenting `valentjn.vscode-ltex` (default language is `en-US`).
+
+---
+
+## 4. Using as a GitHub Template
+
+Instead of cloning or forking, you can use TeamTex as a blueprint to mint completely clean, new repositories.
+
+1. Navigate to the main page of the TeamTex repository on GitHub.
+2. Click the green **Use this template** button near the top right (above the file list).
+3. Select **Create a new repository**.
+4. Choose an owner and enter a repository name for your new project.
+5. **Privacy:** You can freely select **Public** or **Private**. Codespaces and Dev Containers work perfectly fine in private repositories without any extra configuration.
+6. Click **Create repository from template**.
+
+This will generate a brand new repository populated with the TeamTex structure, but without the git commit history of the original template.

@@ -35,3 +35,6 @@ RUN if getent passwd ubuntu > /dev/null 2>&1; then \
     && rm -rf /var/lib/apt/lists/*
 
 USER $USERNAME
+
+# Set the working directory to match the devcontainer/docker-compose workspace mount
+WORKDIR /workspace
