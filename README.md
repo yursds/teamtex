@@ -1,4 +1,4 @@
-# TeamTex
+# TeamTex (TMT)
 
 TeamTex is a lightweight and customizable LaTeX environment built for Dev Containers, GitHub Codespaces, and robust local usage.
 
