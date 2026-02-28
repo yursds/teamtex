@@ -9,6 +9,7 @@
 	"files.exclude": {
 		".devcontainer": true,
 		".github": true,
+		"docs": true
 	},
 	"editor.formatOnSave": true,
 	"ltex.language": "en-US",
