@@ -135,7 +135,7 @@ To download your entire LaTeX source code as a ZIP archive:
 3. Alternatively, you can use the built-in Terminal to zip the source:
 
    ```bash
-   zip -r teamtex_source.zip . -x "build/*" -x ".git/*" -x ".vscode/*" -x ".devcontainer/*" -x ".gitignore" -x "Makefile" -x "README.md" -x ".latexmkrc"
+   zip -r teamtex_source.zip . -x "build/*" -x ".git/*" -x ".vscode/*" -x ".devcontainer/*" -x ".gitignore" -x "Makefile" -x "README.md" -x ".latexmkrc" -x ".github/*"
    ```
 
    > **Note for Windows users:** The `zip` command requires a Linux-like terminal (like the one present in the Dev Container, Codespaces, or Git Bash). If you are using native PowerShell, you might need to manually zip the files using the File Explorer.
