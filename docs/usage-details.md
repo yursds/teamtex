@@ -1,4 +1,4 @@
-# Advanced Usage
+# More Usage Details
 
 ## Using as a GitHub Template
 
