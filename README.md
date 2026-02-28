@@ -73,4 +73,7 @@ To get a clean archive of your source code:
 | [**Git Workflow**](docs/git-workflow.md)      | Divergent branches, Codespace persistence, and branching.   |
 | [**Advanced Usage**](docs/advanced-usage.md)  | Templates, Copilot, Troubleshooting, and custom extensions. |
 
+> [!TIP]
+> **Don't stop at the Quick Start!** We highly recommend reading through all the detailed guides above to fully master the TeamTex environment and its collaborative features.
+
 ---
