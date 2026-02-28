@@ -1,11 +1,7 @@
 services:
   teamtex:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        # Change to "light" for a smaller image with basic texlive packages
-        - TEXLIVE_VERSION=full
+    # Use the pre-built framework image from GHCR
+    image: ghcr.io/yursds/teamtex-base:latest
     volumes:
       - ..:/workspace:cached
     # Overrides default command so container stays running
