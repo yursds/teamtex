@@ -12,6 +12,7 @@ on:
 
 jobs:
   push_to_registry:
+    if: github.repository == 'yursds/TeamTex'
     name: Build and Push Docker image to GHCR
     runs-on: ubuntu-latest
     permissions:
