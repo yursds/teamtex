@@ -1,17 +1,77 @@
 {
 	"latex-workshop.latex.outDir": "%DIR%/build",
 	"latex-workshop.latex.autoClean.run": "onBuilt",
+	"latex-workshop.latex.autoBuild.run": "onSave",
+	"latex-workshop.latex.recipe.default": "lastUsed",
 	"latex-workshop.view.pdf.viewer": "tab",
 	"latex-workshop.latex.magic.args": [
 		"-output-directory=%DIR%/build",
 		"%DOC%"
 	],
-	"files.exclude": {
-		".devcontainer": true,
-		".github": true,
-		"docs": true,
-		"LICENSE": true
-	},
+	// "files.exclude": {
+	// 	".devcontainer": true,
+	// 	".github": true,
+	// 	"docs": true,
+	// 	"LICENSE": true
+	// },
+	"latex-workshop.latex.recipes": [
+		{
+			"name": "pdflatex",
+			"tools": [
+				"pdflatex"
+			]
+		},
+		{
+			"name": "pdflatex -> bibtex -> pdflatex*2",
+			"tools": [
+				"pdflatex",
+				"bibtex",
+				"pdflatex",
+				"pdflatex"
+			]
+		},
+		{
+			"name": "latexmk",
+			"tools": [
+				"latexmk"
+			]
+		}
+	],
+	"latex-workshop.latex.tools": [
+		{
+			"name": "latexmk",
+			"command": "latexmk",
+			"args": [
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"-pdf",
+				"-outdir=%OUTDIR%",
+				"%DOC%"
+			],
+			"env": {}
+		},
+		{
+			"name": "pdflatex",
+			"command": "pdflatex",
+			"args": [
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"-output-directory=%OUTDIR%",
+				"%DOC%"
+			],
+			"env": {}
+		},
+		{
+			"name": "bibtex",
+			"command": "bibtex",
+			"args": [
+				"%OUTDIR%/%DOCFILE%"
+			],
+			"env": {}
+		}
+	],
 	"editor.formatOnSave": true,
 	"ltex.language": "en-US",
 	"ltex.enabled": false

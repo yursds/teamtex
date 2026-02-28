@@ -49,7 +49,7 @@ If you rename your main file (e.g., `thesis.tex`):
 
 1. **Automation:** Update `.devcontainer/devcontainer.json` (change `main.tex` in `updateContentCommand`).
 2. **VS Code:** If needed, update `.vscode/settings.json`.
-3. **Manual:** Run `latexmk -pdf -outdir=build thesis.tex`.
+3. **Manual:** Run `mkdir -p build && pdflatex -interaction=nonstopmode -output-directory=build thesis.tex`.
 
 ### Missing Folders (.vscode, .devcontainer, .github, docs)
 
