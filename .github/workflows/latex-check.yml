@@ -15,34 +15,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Compile LaTeX document (Pass 1)
+      - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-          compiler: pdflatex
-          args: -interaction=nonstopmode -file-line-error -halt-on-error -output-directory=build
-
-      - name: Compile Bibliography
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: build/main
-          compiler: bibtex
-          args: ""
-        continue-on-error: true
-
-      - name: Compile LaTeX document (Pass 2)
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
-          compiler: pdflatex
-          args: -interaction=nonstopmode -file-line-error -halt-on-error -output-directory=build
-
-      - name: Compile LaTeX document (Pass 3)
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
-          compiler: pdflatex
-          args: -interaction=nonstopmode -file-line-error -halt-on-error -output-directory=build
+          compiler: latexmk
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=build
 
       - name: Verify build artifacts
         run: |

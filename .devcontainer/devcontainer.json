@@ -3,7 +3,7 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "teamtex",
 	"workspaceFolder": "/workspace",
-	"updateContentCommand": "mkdir -p build && pdflatex -interaction=nonstopmode -output-directory=build main.tex && bibtex build/main || true && pdflatex -interaction=nonstopmode -output-directory=build main.tex && pdflatex -interaction=nonstopmode -output-directory=build main.tex",
+	"updateContentCommand": "mkdir -p build && latexmk -pdf -outdir=build -interaction=nonstopmode main.tex || true",
 	"customizations": {
 		"vscode": {
 			"extensions": [
