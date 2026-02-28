@@ -6,6 +6,10 @@
 		"-output-directory=%DIR%/build",
 		"%DOC%"
 	],
+	"files.exclude": {
+		".devcontainer": true,
+		".github": true,
+	},
 	"editor.formatOnSave": true,
 	"ltex.language": "en-US",
 	"ltex.enabled": false

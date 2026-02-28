@@ -1,11 +1,21 @@
 # LaTeX auxiliary files
+*.acn
+*.acr
+*.alg
 *.aux
 *.bbl
 *.bcf
 *.blg
 *.fdb_latexmk
 *.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ind
+*.lof
 *.log
+*.lot
 *.nav
 *.out
 *.run.xml
@@ -13,16 +23,9 @@
 *.synctex.gz
 *.toc
 *.xdv
-*.idx
-*.ind
-*.lof
-*.lot
-*.acn
-*.acr
-*.alg
-*.glg
-*.glo
-*.gls
+
+# Ignore zip files
+*.zip
 
 # Ignore the build directory
 build/

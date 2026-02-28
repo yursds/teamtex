@@ -3,7 +3,7 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "teamtex",
 	"workspaceFolder": "/workspace",
-	"updateContentCommand": "make all",
+	"updateContentCommand": "latexmk -pdf -outdir=build main.tex",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -12,7 +12,11 @@
 				"ms-vsliveshare.vsliveshare"
 				// Uncomment below for Grammar checking
 				// "valentjn.vscode-ltex"
-			]
+			],
+			"files.exclude": {
+				".devcontainer": true,
+				".github": true
+			}
 		}
 	}
 }
