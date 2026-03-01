@@ -8,12 +8,13 @@
 		"-output-directory=%DIR%/build",
 		"%DOC%"
 	],
-	// "files.exclude": {
-	// 	".devcontainer": true,
-	// 	".github": true,
-	// 	"docs": true,
-	// 	"LICENSE": true
-	// },
+	"files.exclude": {
+		".devcontainer": true,
+		".github": true,
+		".latexmkrc": true,
+		"docs": true,
+		"LICENSE": true
+	},
 	"latex-workshop.latex.recipes": [
 		{
 			"name": "latexmk",

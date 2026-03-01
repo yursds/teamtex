@@ -20,15 +20,16 @@ rm -f "$OUTPUT_NAME"
 
 # Create the zip with exclusions
 zip -r "$OUTPUT_NAME" . \
-    -x "build/*" \
-    -x ".git/*" \
-    -x ".vscode/*" \
     -x ".devcontainer/*" \
-    -x ".github/*" \
+    -x ".git/*" \
     -x ".gitignore" \
+    -x ".github/*" \
+    -x ".latexmkrc" \
+    -x ".vscode/*" \
+    -x "build/*" \
     -x "docs/*" \
-    -x "README.md" \
+    -x "export_source.sh" \
     -x "LICENSE" \
-    -x "export_source.sh"
+    -x "README.md"
 
 echo "Done! You can now download '$OUTPUT_NAME'."

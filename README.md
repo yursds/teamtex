@@ -66,16 +66,14 @@ The project is specifically configured to keep the root directory clean by routi
 
 ### Option B: Terminal
 
-If you prefer the command line, use `pdflatex` and `bibtex`:
+If you prefer the command line, use `latexmk` directly:
 
 ```bash
-# Fast Compile (no bibliography)
-mkdir -p build && pdflatex -interaction=nonstopmode -output-directory=build main.tex
-
-# Full Compile (with bibliography)
-mkdir -p build && pdflatex -interaction=nonstopmode -output-directory=build main.tex && bibtex build/main && pdflatex -interaction=nonstopmode -output-directory=build main.tex && pdflatex -interaction=nonstopmode -output-directory=build main.tex
+# Full Compile (handles bibliography, multiple passes automatically)
+latexmk -pdf -outdir=build main.tex
 
 # Clean
+latexmk -C -outdir=build
 rm -rf build/
 ```
 
