@@ -19,6 +19,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
+          compiler: latexmk
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=build
 
       - name: Verify build artifacts

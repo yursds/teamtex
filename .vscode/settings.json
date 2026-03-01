@@ -1,6 +1,8 @@
 {
 	"latex-workshop.latex.outDir": "%DIR%/build",
 	"latex-workshop.latex.autoClean.run": "onBuilt",
+	"latex-workshop.latex.autoBuild.run": "onSave",
+	"latex-workshop.latex.recipe.default": "lastUsed",
 	"latex-workshop.view.pdf.viewer": "tab",
 	"latex-workshop.latex.magic.args": [
 		"-output-directory=%DIR%/build",
@@ -9,9 +11,34 @@
 	"files.exclude": {
 		".devcontainer": true,
 		".github": true,
+		".latexmkrc": true,
 		"docs": true,
 		"LICENSE": true
 	},
+	"latex-workshop.latex.recipes": [
+		{
+			"name": "latexmk",
+			"tools": [
+				"latexmk"
+			]
+		}
+	],
+	"latex-workshop.latex.tools": [
+		{
+			"name": "latexmk",
+			"command": "latexmk",
+			"args": [
+				"-f",
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"-pdf",
+				"-outdir=%OUTDIR%",
+				"%DOC%"
+			],
+			"env": {}
+		}
+	],
 	"editor.formatOnSave": true,
 	"ltex.language": "en-US",
 	"ltex.enabled": false

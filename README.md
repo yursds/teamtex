@@ -69,11 +69,12 @@ The project is specifically configured to keep the root directory clean by routi
 If you prefer the command line, use `latexmk` directly:
 
 ```bash
-# Compile
+# Full Compile (handles bibliography, multiple passes automatically)
 latexmk -pdf -outdir=build main.tex
 
 # Clean
-latexmk -c -outdir=build main.tex && rm -rf build/
+latexmk -C -outdir=build
+rm -rf build/
 ```
 
 ---

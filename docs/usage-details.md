@@ -18,6 +18,11 @@ Instead of cloning or forking, you can use TeamTex as a blueprint to mint comple
 - **GitHub Copilot:** Supported out-of-the-box.
 - **Grammar Options:** Enable LTeX by editing `.devcontainer/devcontainer.json` and uncommenting `valentjn.vscode-ltex`.
 
+- **SyncTeX (Code <-> PDF Navigation)**
+  The environment is already configured to synchronize the code with the generated PDF:
+  - **From PDF to Code (Inverse Search):** Hold `Ctrl` (or `Cmd` on Mac) and click on any text in the PDF viewer to jump straight to the source code.
+  - **From Code to PDF (Forward Search):** Place your cursor in the `main.tex` code and press `Ctrl+Alt+J` to jump to the corresponding paragraph in the PDF.
+
 ---
 
 ## Important Note on Docker Image
@@ -49,7 +54,7 @@ If you rename your main file (e.g., `thesis.tex`):
 
 1. **Automation:** Update `.devcontainer/devcontainer.json` (change `main.tex` in `updateContentCommand`).
 2. **VS Code:** If needed, update `.vscode/settings.json`.
-3. **Manual:** Run `latexmk -pdf -outdir=build thesis.tex`.
+3. **Manual:** Run `mkdir -p build && pdflatex -interaction=nonstopmode -output-directory=build thesis.tex`.
 
 ### Missing Folders (.vscode, .devcontainer, .github, docs)
 
